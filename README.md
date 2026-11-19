@@ -7,11 +7,14 @@
 | 文件 | 内容 |
 |---|---|
 | `AGENT.md` | 任务验收、标题与文风、数据与图、文献、工程组织、交付、自查、索引 |
+
+多工具兼容：`ln -s AGENT.md AGENTS.md` 与 `ln -s AGENT.md CLAUDE.md`，只维护一份源文件。
 | `docs/style.md` | 三层问题框架、判断规则、断言分级、21 组改写对照、检查方法 |
 | `docs/wording.md` | 分「硬禁／提示」两档的词表，`scripts/style_scan.py` 自动读取 |
 | `docs/references.md` | Crossref 检索参数、刊名筛选、证据等级、开放获取、DOI 核对与占比统计脚本 |
 | `docs/typesetting.md` | 编译顺序、六项检查命令、版式问题、模板改造 |
 | `docs/project.md` | 单个项目的档案格式（示例为占位内容，换工程时整份重写） |
+| `docs/peer-projects.md` | 同类开源项目调研、可借鉴机制与采纳／不采纳结论 |
 | `scripts/` | `style_scan.py`（按词表扫正文）、`bib_audit.py`（DOI 核对）、`oa_fetch.py`／`oa_detail.py`（开放获取与摘要） |
 
 ## 用法
