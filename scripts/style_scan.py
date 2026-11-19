@@ -1,4 +1,4 @@
-"""按 docs/文风词表.md 扫描正文，分「硬禁」与「提示」两组输出。
+"""按 docs/wording.md 扫描正文，分「硬禁」与「提示」两组输出。
 
 词表是唯一来源：标题含「硬禁」的小节按错误处理（退出码 1），
 含「提示」的小节只列出来供人判断，不影响退出码；「单字」小节跳过。
@@ -14,7 +14,7 @@ import os
 import re
 import sys
 
-DEFAULT_MD = os.path.join("docs", "文风词表.md")
+DEFAULT_MD = os.path.join("docs", "wording.md")
 
 
 def load_terms(md_path):

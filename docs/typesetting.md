@@ -30,7 +30,7 @@ grep -c Overfull main.log                    # 溢出，尽量为 0
 
 ```bash
 grep -rn -E "算账|一笔账|划算|吃掉|吞掉|买单|性价比|天花板|红利|雪球" --include="*.tex" .
-python bib_audit.py                          # 书目 DOI 核对，见 文献核验.md
+python bib_audit.py                          # 书目 DOI 核对，见 docs/references.md
 ```
 
 隐喻扫描只能防复发，扫不到没预料到的新词。发现一个新隐喻，就补进 `AGENT.md` 的禁用表与这条命令。
