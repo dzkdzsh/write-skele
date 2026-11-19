@@ -15,7 +15,7 @@ xelatex -interaction=nonstopmode main.tex   # 刷新 .toc 与交叉引用
 
 改过标题必须连跑两遍，否则目录里还是旧标题。
 
-## 二、每次改动后的六项检查
+## 二、每次改动后的七项检查
 
 ```bash
 grep -c "^!" main.log                        # 错误数，应为 0
@@ -24,6 +24,9 @@ grep -c "Reference.*undefined" main.log      # 未解析引用，应为 0
 pdftotext main.pdf - | grep -c "??"          # 正文中的 ??，应为 0
 pdfimages -list main.pdf                     # 应无位图（TikZ 工程）
 grep -c Overfull main.log                    # 溢出，尽量为 0
+# 第七项：引用与文献库双向一致（bash 示意，核对两个差集均为空）
+diff <(grep -o '\\cite{[^}]*}' chapters/*.tex | grep -o '{[^}]*}' | tr -d '{}' | tr ',' '\n' | sort -u) \
+     <(grep -o '^@[a-z]*{[^,]*' refs.bib | sed 's/^@[a-z]*{//' | sort -u)
 ```
 
 另两条按需跑：
